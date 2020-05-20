@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/lolinfo}" method="post" th:object="${userAccount}">
+  <label>Game:</label>
+  <select th:field="*{gameName}">
+    <option th:each="g : ${listGame}" th:value="${g}" th:text="${g}" />
+  </select>
+  <br/>
+  <label>Nickname:</label>
+  <input type="text" th:field="*{name}" /><br/>
+  <button type="submit">Submit</button>
+</form>
+<!--  <form method="POST" object="${name}">-->
+<!--    <input type="text" field="*{name}"/>-->
+<!--  </form>-->
+</body>
+</html>
